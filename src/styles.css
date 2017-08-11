@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face { font-family: "OpenSans-Regular"; src: url("./assets/fonts/open-sans/OpenSans-Regular.ttf"); }
+@font-face { font-family: "OpenSans-Light"; src: url("./assets/fonts/open-sans/OpenSans-Light.ttf"); }
+@font-face { font-family: "OpenSans-Bold"; src: url("./assets/fonts/open-sans/OpenSans-Bold.ttf"); }
+@font-face { font-family: "OpenSans-Semibold"; src: url("./assets/fonts/open-sans/OpenSans-Semibold.ttf"); }
+body{
+  background: #f2f2f2;
+}
+.bam-button{
+  display: block;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "OpenSans-Regular";
+  height: 40px;
+  line-height: 40px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 20px;
+  user-select: none;
+  --box-shadow-color: #dfdfdf;
+  box-shadow: 0px 2px 0px 0px var(--box-shadow-color);
+  -webkit-appearance: none;
+}
+.bam-button.blue{
+  background-color: #13bae6;
+  --box-shadow-color: #095b70;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.bam-button.blue:hover{
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #14708f;
+}
+.uploadExl .ui-fileupload-buttonbar span.fa-plus,
+.uploadExl .ui-fileupload-buttonbar span.fa-upload{
+  display: none;
+}
+.uploadExl .ui-fileupload-buttonbar{
+  border: none;
+  background: transparent;
+}
+.uploadExl .ui-fileupload-content.ui-widget-content.ui-corner-bottom{
+  border: none;
+}
+.uploadExl .ui-fileupload-row div:nth-child(1),
+.uploadExl .ui-fileupload-row div:nth-child(3),
+.uploadExl .ui-progressbar{
+  display: none;
+}
+.uploadExl .ui-fileupload-buttonbar.ui-widget-header{
+  display: inline-block;
+}
+.uploadExl .ui-fileupload-content.ui-widget-content{
+  display: inline-block;
+  float: right;
+}
+.uploadExl .ui-fileupload-choose.ui-button{
+  display: block;
+  font-size: 20px;
+  padding: 20px 30px 20px 15px;
+  margin-bottom: 15px;
+}
+.uploadExl .ui-fileupload-buttonbar button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-icon-left{
+  font-size: 20px;
+  padding: 20px 30px 20px 15px;
+  margin-bottom: 15px;
+}
+.ui-datatable.borderless thead th,
+.ui-datatable.borderless tbody,
+.ui-datatable.borderless tbody tr,
+.ui-datatable.borderless tbody td {
+  border-style: none;
+}

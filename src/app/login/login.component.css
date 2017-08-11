@@ -1,4 +1,47 @@
-.login-form{
-  background: #00BFFF;
-  padding:35px 15px;
+.login-block{
+  width: 400px;
+  z-index: 1;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  background-color: #fff;
+  border-radius: 0 0 1px 1px;
+  margin-left: 40px;
+}
+.login-overlay{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+}
+.login-header{
+  height: 10px;
+  padding: 30px 25px;
+  text-align: center;
+}
+.login-body{
+  padding: 25px;
+}
+.login-form input[type="text"], .login-form input[type="password"]{
+  display: block;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid #909999;
+  border-radius: 2px;
+}
+.login-form label{
+  float: left;
+  font-family: 'OpenSans-Light';
+}
+input.error, input.ng-invalid.ng-touched{
+  border-color: firebrick !important;
+}
+.error{
+  font-family: 'OpenSans-Regular';
+  color: red;
 }

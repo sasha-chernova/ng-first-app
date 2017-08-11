@@ -1,4 +1,42 @@
-<p>
-  This is my landing page
-  <button class="btn btn-warning">Hi</button>
-</p>
+<app-header [title]="title">
+
+</app-header>
+<div class="home-main">
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="row">
+              <div class="upload-spreadsheet">
+                <button type="button" (click)="showDialog()" pButton label="Upload New Items"></button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="setup-item">
+                <button pButton type="button" label="Manually Setup Items" (click)="redirect()"></button>
+              </div>
+            </div>
+            <div class="row download">
+              <a href="#">Download an item upload template</a>
+            </div>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8" style="margin-top: 20px;">
+      <span class="vendor-number">4</span><a [routerLink]="['/home']" class="vendor-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Vendor Data</a>
+      <a [routerLink]="['/home/history']" class="history-link" routerLinkActive="active">History</a>
+      <input type="text" name="search" id="" placeholder="Filter by UPC, Vendor and Date">
+      <div class="inner-outlet">
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</div>
+<p-dialog header="Item Upload" [(visible)]="display" modal="modal" width="700" [responsive]="true" [dismissableMask]="true" [draggable]="false" [style]="{'text-align':'left'}">
+  <p class="title-dialog">Select a CSV or Excel file to upload:</p>
+  <p-fileUpload name="myfile[]" url="./upload.php" [showCancelButton]="false" [previewWidth]="0" chooseLabel="Browse" ngClass="uploadExl" invalidFileTypeMessageDetail="only .xlsx, .xls, .cvs formats are allowed" accept="text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></p-fileUpload>
+  <p><a href="#" class="download-template">Download an item upload template</a></p>
+  <p-footer>
+    <!--<button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>-->
+    <!--<button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>-->
+  </p-footer>
+</p-dialog>

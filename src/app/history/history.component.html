@@ -1,0 +1,15 @@
+<p-dataTable [value]="history">
+  <p-column field="errorlog" header="Error Log"></p-column>
+  <p-column field="description" header="Description"></p-column>
+  <p-column field="date" header="Date"></p-column>
+  <p-column field="images" header="Images"></p-column>
+  <!--<p-column field="addimages" header="Add images"></p-column>-->
+  <p-column styleClass="col-button">
+    <ng-template pTemplate="header">
+      Add image
+    </ng-template>
+    <ng-template let-image="rowData" pTemplate="body">
+      <button type="button" pButton icon="fa-plus"></button>
+    </ng-template>
+  </p-column>
+</p-dataTable>

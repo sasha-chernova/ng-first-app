@@ -1,0 +1,32 @@
+<p-dataTable [value]="vendors" [responsive]="true" [scrollable]="true" scrollHeight="370px" styleClass="borderless">
+  <p-headerColumnGroup>
+    <p-row>
+      <p-column header="Action" colspan="2"></p-column>
+      <p-column header="Vendor Name"></p-column>
+      <p-column header="Items Spec Uploaded"></p-column>
+      <p-column header="Date"></p-column>
+      <p-column header=""></p-column>
+    </p-row>
+  </p-headerColumnGroup>
+  <p-column>
+    <ng-template let-vendors="rowData" let-i="rowIndex" pTemplate="body">
+      <button type="button" pButton label="View"></button>
+    </ng-template>
+  </p-column>
+  <p-column>
+    <ng-template let-vendors="rowData" let-i="rowIndex" pTemplate="body">
+      <button type="button" pButton label="Approve" *ngIf="vendors.approve"></button>
+    </ng-template>
+  </p-column>
+  <p-column field="name"></p-column>
+  <p-column field="items"></p-column>
+  <p-column field="date"></p-column>
+  <p-column>
+    <ng-template let-vendors="rowData" let-i="rowIndex" pTemplate="body">
+      <button type="button" pButton label="Delete" *ngIf="vendors.options" class="ui-button-danger"></button>
+      <i class="fa fa-check-circle fa-2x approved" aria-hidden="true" *ngIf="!vendors.options"></i>
+    </ng-template>
+  </p-column>
+
+</p-dataTable>
+

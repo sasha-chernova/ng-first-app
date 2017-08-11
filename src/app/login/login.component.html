@@ -1,18 +1,31 @@
+<div class="login-overlay">
 <div class="container">
   <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8 offset-lg-4 offset-md-4 offset-sm-3 offset-xs-2">
-      <form class="login-form" (ngSubmit)="login(user)">
-        <div class="form-group">
-          <label for="username">Username or email</label>
-          <input type="text" name="username" id="username" class="form-control" required >
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8 offset-lg-3 offset-md-2">
+      <div class="login-block vertical-align ">
+        <div class="login-header">
+          <img src="assets/img/logo.png" alt="BAM logo">
         </div>
-        <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="form-control" required >
+        <div class="login-body">
+          <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login($event); this.loginForm.reset()">
+            <div class="form-group">
+              <label for="email">Username</label>
+              <input type="text" formControlName="email" id="email" class="form-control" required >
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" id="password" class="form-control" required>
+            </div>
+            <div *ngIf="error" class="error">
+              Login failed. Check credentials or network connection
+            </div>
+            <input type="submit" value="Log In" class="bam-button blue">
+          </form>
         </div>
-        <input type="submit" value="Login" class="btn btn-primary">
-      </form>
+      </div>
     </div>
   </div>
 </div>
+</div>
+<p-growl [(value)]="msgs"></p-growl>
 

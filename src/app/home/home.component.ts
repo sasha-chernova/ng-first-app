@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Router, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  display: boolean = false;
+  // @Input title: string = "Home";
 
-  constructor() { }
-
+  constructor(private router: Router) {
+  }
+  redirect() {
+    this.router.navigate(['./manual-upload']);
+  }
   ngOnInit() {
+    //this.title = "Home";
   }
 
+  showDialog() {
+    this.display = true;
+  }
 }
